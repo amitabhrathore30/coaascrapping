@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { PopupSearchComponent } from './components/popup-search/popup-search.component';
+import { PopupSearchComponent } from './Components/popup-search/popup-search.component';
 import { PythonApiService } from './Services/python-api.service';
 
 @Component({

@@ -16,7 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { DocumentSearchComponent } from './Components/document-search/document-search.component';
 import { InstrumentDocumentSearchComponent } from './Components/instrument-document-search/instrument-document-search.component';
 import { JsonToExcelService } from './Services/jsonToExcel.service';
-import { PopupSearchComponent } from './components/popup-search/popup-search.component';
+import { PopupSearchComponent } from './Components/popup-search/popup-search.component';
 import { ScreeningPageComponent } from './Components/screening-page/screening-page.component';
 
 const routes: Routes = [
