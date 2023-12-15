@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/c2b21626-bc15-4a30-a504-96a9816ab501/resourceGroups/GPT_POC/providers/Microsoft.Web/sites/gptcoaascrapping",
+    "appService.deploySubpath": "dist\\GPT-POC-UI"
+}

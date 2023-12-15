@@ -1,0 +1,66 @@
+/* dynamic-table.component.scss */
+.mat-elevation-z8 {
+    margin: 0 20px; /* Add margin spaces from the sides */
+    overflow-x: auto; /* Enable horizontal scroll if needed */
+  }
+  
+  .search-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  
+  /* search.component.scss */
+.search-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between; /* Align items to the ends */
+    margin: 20px; /* Adjust margin as needed */
+  }
+  
+  .search-field {
+    flex-grow: 1;
+    margin-right: 10px; /* Add spacing between search bar and chips */
+  }
+  
+  .chips-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    max-width: calc(100% - 250px); /* Adjust the value based on the search bar width */
+  }
+  
+  .mat-chip {
+    margin: 4px;
+    background-color: #e0e0e0;
+    border-radius: 12px; /* Add border-radius for a curved appearance */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 100px; /* Set a minimum width for the chip */
+    padding: 8px; /* Adjust padding for better spacing */
+  }
+  
+  .mat-icon {
+    cursor: pointer;
+    margin-left: 4px; /* Add spacing between text and icon */
+  }
+  
+  

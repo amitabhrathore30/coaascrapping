@@ -1,0 +1,146 @@
+.coa-instrument-container {
+  padding: 2%;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  gap: 10px;
+  background: #fafafa;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  margin-right: 15px;
+}
+
+.vertical-line {
+  width: 1px; /* Line width */
+  background: #ccc; /* Line color */
+  min-height: calc(
+    100vh - 40px
+  ); /* Line height, adjust according to your need */
+  margin-right: 15px;
+}
+
+.other-section {
+  flex-grow: 1; /* Let the other section take up the rest of the space */
+  padding: 10px; /* Add some padding */
+  height: 75%;
+}
+
+.filter {
+  width: 100%;
+}
+
+.checkbox-filter {
+  display: flex;
+  flex-direction: column;
+}
+
+.slider-filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.key-value-div {
+  max-height: 100px;
+  overflow-y: auto;
+  padding: 5px;
+  border: 1px solid #ccc;
+  font-family: Arial, sans-serif;
+  background: #f6f8fa;
+  border-radius: 5px;
+}
+
+.key-value-pair {
+  padding: 5px;
+  transition: background 0.3s;
+}
+
+.key-value-pair:hover {
+  background: #e3f2fd;
+}
+
+.key {
+  font-weight: bold;
+  color: #0d47a1;
+}
+
+.value {
+  color: #333;
+}
+
+.search-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 10px;
+}
+
+.card {
+  max-width: 800px;
+  margin: 10px;
+}
+
+/* The container div */
+.div-with-scrollbar {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+/* The scrollbar */
+.div-with-scrollbar::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+/* Track of the scrollbar */
+.div-with-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color of the track */
+}
+
+/* Handle of the scrollbar */
+.div-with-scrollbar::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the handle */
+}
+
+/* Handle on hover */
+.div-with-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color of the handle when hovered */
+}
+.spinner-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.mat-card-header-text {
+  margin: 0px !important;
+}
+
+/* checkbox-list.component.css */
+.checkbox-wrapper {
+    width: 250px;  /* Adjust as needed */
+}
+
+.long-text {
+    word-wrap: break-word;
+    display: inline-block;  /* To ensure word-wrap is applied correctly */
+    width: 100%;  /* Take full width of its container */
+}
+::ng-deep .mat-slide-toggle-content {
+  display: flex;
+  justify-content: space-between;
+}
+.left-label, .right-label {
+  flex-grow: 1;
+  text-align: center;
+}

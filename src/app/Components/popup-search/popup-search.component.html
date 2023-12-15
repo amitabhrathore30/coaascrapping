@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>Enter search criteria</h1>
+<div mat-dialog-content>
+  <p>Enter search keywords:</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="keyword">
+  </mat-form-field>
+  <p>Select file type to download:</p>
+  <mat-form-field>
+    <mat-select matInput name="mySelect" [(value)]="fileFormat">
+        <mat-option value="pdf">
+            pdf
+        </mat-option>
+        <mat-option value="docx">
+            docx
+        </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button (click)="closeDialog()" cdkFocusInitial>Ok</button>
+</div>

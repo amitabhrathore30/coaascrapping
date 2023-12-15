@@ -1,0 +1,72 @@
+<div class="coa-instrument-container container">
+  <div class="filter-container">
+    <mat-form-field class="filter">
+      <mat-label><mat-icon>search</mat-icon> Text Filter</mat-label>
+      <input matInput [(ngModel)]="textFilter" />
+    </mat-form-field>
+
+    <mat-form-field class="filter">
+      <mat-label><mat-icon>list</mat-icon> Quantity</mat-label>
+      <mat-select [(value)]="quantityFilter">
+        <mat-option value="5">5</mat-option>
+        <mat-option value="10">10</mat-option>
+        <mat-option value="15">15</mat-option>
+        <mat-option value="20">20</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="filter">
+      <mat-label><mat-icon>list</mat-icon> Indication</mat-label>
+      <mat-select [(value)]="indicationsFilter">
+        <mat-option value="Colorectal cancer">Colorectal cancer</mat-option>
+        <mat-option value="Breast cancer">Breast cancer</mat-option>
+        <mat-option value="Brain cancer">Brain cancer</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="filter">
+      <mat-label><mat-icon>list</mat-icon> COA type</mat-label>
+      <mat-select [(value)]="coaTypesFilter">
+        <mat-option value="ClinRO">ClinRO</mat-option>
+        <mat-option value="Composite">Composite</mat-option>
+        <mat-option value="Measure">Measure</mat-option>
+        <mat-option value="ObsRO">ObsRO</mat-option>
+        <mat-option value="PerfO">PerfO</mat-option>
+        <mat-option value="PRO">PRO</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="applyFilters()">
+      Apply Filters
+    </button>
+  </div>
+  <div class="vertical-line"></div>
+  <div class="other-section">
+    <mat-toolbar color="primary">
+      <span>Search Results</span>
+    </mat-toolbar>
+
+    <div class="search-container div-with-scrollbar">
+      <mat-card class="card" *ngFor="let item of instruments">
+        <mat-card-header>
+          <mat-card-title>{{ item.instrument_name }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p><strong>Description:</strong> {{ item.description }}</p>
+          <p><strong>Validation:</strong> {{ item.validation }}</p>
+          <p><strong>Reference:</strong> {{ item.reference }}</p>
+          <p><strong>Study:</strong> {{ item.study }}</p>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="card" *ngIf="error">
+        <mat-card-header>
+          <mat-card-title>ERROR ! Kindly re-submit the search.</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p><strong>Description:</strong> {{ errorContent }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
+<div class="spinner-container" *ngIf="loader">
+  <mat-spinner [diameter]="50" [strokeWidth]="5"></mat-spinner>
+</div>

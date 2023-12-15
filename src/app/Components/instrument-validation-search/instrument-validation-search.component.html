@@ -1,0 +1,71 @@
+<div class="coa-instrument-container container">
+    <div class="filter-container">
+      <mat-form-field class="filter">
+        <mat-label><mat-icon>search</mat-icon> Text Filter</mat-label>
+        <input matInput [(ngModel)]="textFilter" />
+      </mat-form-field>
+        
+      <mat-form-field class="filter">
+        <mat-label><mat-icon>list</mat-icon> Indication</mat-label>
+        <mat-select [(value)]="indicationsFilter">
+          <mat-option value="Colorectal cancer">Colorectal cancer</mat-option>
+          <mat-option value="Breast cancer">Breast cancer</mat-option>
+          <mat-option value="Brain cancer">Brain cancer</mat-option>
+          <mat-option value="Prostate cancer">Prostate cancer</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="filter">
+        <mat-label><mat-icon>list</mat-icon> COA</mat-label>
+        <mat-select [(value)]="coaFilter">
+          <mat-option value="EORTC-QLQ-C30-PR25">EORTC-QLQ-C30-PR25</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" (click)="applyFilters()">
+        Apply Filters
+      </button>
+    </div>
+    <div class="vertical-line"></div>
+    <div class="other-section">
+      <mat-toolbar color="primary">
+        <span>Search Results</span>
+      </mat-toolbar>
+  
+      <div class="search-container div-with-scrollbar">
+        <mat-card class="card" *ngIf="this.Content_Validity">
+          <mat-card-header>
+            <mat-card-title>Content validity</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p><strong>Interviews with Clinical Experts:</strong> {{ this.Content_Validity.Interviews_with_Clinical_Experts }}</p>
+            <p><strong>Interviews with Patients:</strong> {{ this.Content_Validity.Interviews_with_Patients }}</p>
+            <p><strong>Literature Reviews:</strong> {{ this.Content_Validity.Literature_Reviews }}</p>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="card" *ngIf="this.Psychometric_Properties">
+          <mat-card-header>
+            <mat-card-title>Psychometric properties</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p><strong>Ability to Detect Change/Responsiveness:</strong> {{ this.Psychometric_Properties.Ability_to_Detect_Change_Responsiveness }}</p>
+            <p><strong>Construct Validity:</strong> {{ this.Psychometric_Properties.Construct_Validity }}</p>
+            <p><strong>Meaningful Change:</strong> {{ this.Psychometric_Properties.Meaningful_Change }}</p>
+            <p><strong>Reliability:</strong> {{ this.Psychometric_Properties.Reliability }}</p>
+            <p><strong>Structural Validity:</strong> {{ this.Psychometric_Properties.Structural_Validity }}</p>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="card" *ngIf="error">
+          <mat-card-header>
+            <mat-card-title>ERROR ! Kindly re-submit the search.</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p><strong>Description:</strong> {{ errorContent }}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  <div class="spinner-container" *ngIf="loader">
+    <mat-spinner [diameter]="50" [strokeWidth]="5"></mat-spinner>
+  </div>
+  

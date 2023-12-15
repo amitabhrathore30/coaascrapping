@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 16px;
+    gap: 16px;
+  }
+  
+  .thumbnail-card {
+    flex: 1 0 300px;
+    margin-bottom: 16px;
+    transition: box-shadow .3s;
+    background: #e3f2fd;  /* Light blue background */
+    color: #0d47a1; /* Dark blue text */
+    box-sizing: border-box;
+    margin: 16px;
+    cursor: pointer;
+  }
+  
+  .thumbnail-card:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+  }
+  
+  .example-header-image {
+    background-size: cover;
+  }
+  
+  .mat-card-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  button.mat-button {
+    color: #0d47a1; /* Dark blue text */
+  }
+  
+  .mat-card-avatar{
+    height: 65px;
+    width: 65px;
+    border-radius: 0%;
+  }

@@ -1,0 +1,104 @@
+<div class="coa-instrument-container container">
+  <div class="filter-container">
+    <mat-form-field class="filter">
+      <mat-label>
+        <mat-icon>search</mat-icon> Text Filter
+      </mat-label>
+      <input matInput [(ngModel)]="textFilter" />
+    </mat-form-field>
+
+    <mat-form-field class="filter">
+      <mat-label>
+        <mat-icon>list</mat-icon> Quantity
+      </mat-label>
+      <mat-select [(value)]="quantityFilter">
+        <mat-option value="5">5</mat-option>
+        <mat-option value="10">10</mat-option>
+        <mat-option value="15">15</mat-option>
+        <mat-option value="20">20</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="filter">
+      <mat-label>
+        <mat-icon>list</mat-icon> Indication
+      </mat-label>
+      <mat-select [(value)]="indicationsFilter">
+        <mat-option value="Colorectal cancer">Colorectal cancer</mat-option>
+        <mat-option value="Breast cancer">Breast cancer</mat-option>
+        <mat-option value="Brain cancer">Brain cancer</mat-option>
+        <mat-option value="Lymphoma">Lymphoma</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="filter">
+      <mat-label>
+        <mat-icon>list</mat-icon> Study type
+      </mat-label>
+      <mat-select [(value)]="studyTypesFilter">
+        <mat-option value="Qualitative methodologies (like interviews and focus groups)">Qualitative methodologies (like
+          interviews and focus groups)</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="filter">
+      <mat-label>
+        <mat-icon>list</mat-icon> Topic
+      </mat-label>
+      <mat-select [(value)]="topicFilter">
+        <mat-option value="Patient experience">Patient experience</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="filter">
+      <mat-label>
+        <mat-icon>list</mat-icon> Age
+      </mat-label>
+      <mat-select [(value)]="ageFilter">
+        <mat-option value="Adults (18-65)">Adults (18-65)</mat-option>
+        <mat-option value="Child (6-12 years old)">Child (6-12 years old)</mat-option>
+        <mat-option value="Teen (12-17 years old)">Teen (12-17 years old)</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="filter">
+      <mat-label>
+        <mat-icon>list</mat-icon> Drugs
+      </mat-label>
+      <mat-select [(value)]="drugsFilter">
+        <mat-option value="Taxanes">Taxanes</mat-option>
+        <mat-option value="Any drug">Any drug</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="applyFilters()">
+      Apply Filters
+    </button>
+  </div>
+  <div class="vertical-line"></div>
+  <div class="other-section">
+    <mat-toolbar color="primary">
+      <span>Search Results</span>
+    </mat-toolbar>
+
+    <div class="search-container div-with-scrollbar">
+      <mat-card class="card" *ngFor="let item of publications">
+        <mat-card-header>
+          <mat-card-title>{{ item.title }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p><strong>Pubmed ID:</strong> {{ item.PMID }}</p>
+          <p><strong>Journal:</strong> {{ item.journal }}</p>
+          <p><strong>Authors:</strong> {{ item.authors }}</p>
+          <p><strong>Publication year:</strong> {{ item.publication_year }}</p>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="card" *ngIf="error">
+        <mat-card-header>
+          <mat-card-title>ERROR ! Kindly re-submit the search.</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p><strong>Description:</strong> {{ errorContent }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
+<div class="spinner-container" *ngIf="loader">
+  <mat-spinner [diameter]="50" [strokeWidth]="5"></mat-spinner>
+</div>
